@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Stolzl&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <title>First Page</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+                <div href="#" class="logos-wraper">
+                    <img src="images/image1.png" class="logo__img">
+                    <img src="images/image2.png" class="logo__img">
+                </div>
+                <nav class="main-menu">
+                    <button onclick="toggleMenuList()" class="menu__btn">
+                        <span>
+                          
+                        </span>
+                    </button>
+                    <ul class="menu__list">
+                        <li class="menu__item"><a href="" class="menu__link">Главная</a></li>
+                        <li class="menu__item"><a href="" class="menu__link">Номера</a></li>
+                        <li class="menu__item"><a href="" class="menu__link">Развлечения</a></li>
+                        <li class="menu__item"><a href="" class="menu__link">Трансфер</a></li>
+                        <li class="menu__item"><a href="" class="menu__link">Контакты</a></li>
+                    </ul>
+                </nav>
+                <div class="right-wrapper">
+                    <a href="https://vk.com/feed" class="image-container">
+                        <img src="images/vk.png" alt="vk">
+                    </a>
+                    <a href="https://t.me/testForJob123" class="image-container">
+                        <img src="images/telegram.png" alt="telegram">
+                    </a>         
+                    <a href="#" class="rught-wrapper-btn">Групповые заезды</a>           
+                </div>                
+            </div>
+        </div>        
+    </header>
+
+    <main class="main">
+        <section class="hotel">
+            <div class="container">
+                <div class="hotel__container">
+                    <div class="hotel__container-stars">
+                        <img src="images/star-icon.png" alt="star">
+                        <img src="images/star-icon.png" alt="star">
+                        <img src="images/star-icon.png" alt="star">
+                        <img src="images/star-icon.png" alt="star">
+                    </div>
+                    <h1 class="hotel__container-name">Отель <br>«Долина 960»</h1>
+                    <a href="#" class="hotel__container-btn">Быстрое бронирование</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="bestDeals">
+            <div class="container">
+                <h2 class="bestDeals-name">Лучшие предложения</h2>
+                <div class="bestDeals__container">                    
+                    <div class="bestDeals-card">
+                        <img class="bestDeals-card-img" src="images/appartment-card__image1.png" alt="appartment">
+                        <div class="bestDeals-card__content">
+                            <p class="bestDeals-card__content-name">Премиум Кинг</p>
+                            <h4 class="bestDeals-card__content-price">₽ 4 000</h4>
+                            <a href="#" class="bestDeals-card__content-btn">Подробнее</a>
+                        </div>
+                    </div>    
+                    <div class="bestDeals-card">
+                        <img class="bestDeals-card-img" src="images/appartment-card__image1.png" alt="appartment">
+                        <div class="bestDeals-card__content">
+                            <p class="bestDeals-card__content-name">Эксклюзивный Кинг</p>
+                            <h4 class="bestDeals-card__content-price">₽ 5 000</h4>
+                            <a href="#" class="bestDeals-card__content-btn">Подробнее</a>
+                        </div>
+                    </div>   
+                    <div class="bestDeals-card">
+                        <img class="bestDeals-card-img" src="images/appartment-card__image1.png" alt="appartment">
+                        <div class="bestDeals-card__content">
+                            <p class="bestDeals-card__content-name">Star Кинг</p>
+                            <h4 class="bestDeals-card__content-price">₽ 8 000</h4>
+                            <a href="#" class="bestDeals-card__content-btn">Подробнее</a>
+                        </div>
+                    </div>                
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function toggleMenuList() {
+            document.querySelector('.menu__list').classList.toggle('menu__list--active')
+        }        
+    </script>
+</body>
+</html>

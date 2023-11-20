@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Stolzl&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <title>Second Page</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+                <div href="#" class="logos-wraper">
+                    <img src="images/image1.png" class="logo__img">
+                    <img src="images/image2.png" class="logo__img">
+                </div>
+                <nav class="main-menu">
+                    <button onclick="toggleMenuList()" class="menu__btn">
+                        <span>
+                          
+                        </span>
+                    </button>
+                    <ul class="menu__list">
+                        <li class="menu__item"><a href="" class="menu__link">Главная</a></li>
+                        <li class="menu__item"><a href="" class="menu__link">Номера</a></li>
+                        <li class="menu__item"><a href="" class="menu__link">Развлечения</a></li>
+                        <li class="menu__item"><a href="" class="menu__link">Трансфер</a></li>
+                        <li class="menu__item"><a href="" class="menu__link">Контакты</a></li>
+                    </ul>
+                </nav>
+                <div class="right-wrapper">
+                    <a href="https://vk.com/feed" class="image-container">
+                        <img src="images/vk.png" alt="vk">
+                    </a>
+                    <a href="https://t.me/testForJob123" class="image-container">
+                        <img src="images/telegram.png" alt="telegram">
+                    </a>         
+                    <a href="#" class="rught-wrapper-btn">Групповые заезды</a>           
+                </div>                
+            </div>
+        </div>        
+    </header>
+
+    <main class="main">
+        <section class="hotel">
+            <div class="container">
+                <div class="hotel__container">
+                    <div class="hotel__content">
+                        <h1 class="hotel_name">Добро пожаловать в отель <br>«Долина 960»</h1>
+                        <div class="description__container">
+                            <p class="description__text">
+                                Бутик-отель расположен на Поляне 960, верхнем уровне Курорта Красная Поляна. Небольшой номерной фонд в 48 просторных номеров создает ощущение уединенности и в то же время отвечает запросам молодежной аудитории, которая ценит стиль и активный отдых.                                            
+                            </p>
+                            <p class="description__text">
+                                Ресторан отеля подает завтраки по системе «шведский стол» и примечателен интерьерным решением в стиле поп-арт. Рестобар Liechtenstein временно не работает, в отеле работает только Room Service.
+                            </p>
+                            <p class="description__text">
+                                Cпа-комплекс отеля предлагает гостям посетить открытый подогреваемым инфинити-бассейн с панорамным видом на горы, крытый бассейн. Также в спа-центре отеля Долина 960, представлена термальная зона с финской сауной, паровой комнатой и турецким хаммамом, крытым бассейном с шезлонгами для отдыха.
+                            </p>
+                        </div>     
+                        <a href="#" class="reserve-btn">Быстрое бронирование</a>         
+                    </div>
+                    <div class="card">
+                        <img class="card-img" src="images/about-card__image1.png" alt="">
+                        <div class="card__description">
+                            <a class="about-card">Ресторан и бар</a>
+                            <div class="about-card__title">«Liechtenstein»</div>
+                            <div class="about-card__text">
+                                В ресторане и баре «Liechtenstein» используется авторский подход к приготовлению международных блюд. В заведении представлены блюда европейской, японской и итальянской кухонь. В баре имеется большой выбор терпких напитков и коктейлей.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function toggleMenuList() {
+            document.querySelector('.menu__list').classList.toggle('menu__list--active')
+        }        
+
+        function changeCard(src, btnText, nameText, mainText) {
+            img.src = src;
+            btn.textContent = btnText;
+            cardName.textContent = nameText;
+            cardText.textContent = mainText;
+        }
+
+        let count = 1;        
+        const img = document.querySelector('.card-img')
+        const btn = document.querySelector('.about-card')
+        const cardName = document.querySelector('.about-card__title')
+        const cardText = document.querySelector('.about-card__text')
+        console.log(cardText);
+        const img1 = 'images/about-card__image1.png'
+        const img2 = 'images/about-card__image2.png'
+        const img3 = 'images/about-card__image3.png'
+        const btn1 = 'Ресторан и бар'
+        const btn2 = 'Банный комплекс'
+        const btn3 = 'Отдыхай летом'
+        const name1 = '«Liechtenstein»'
+        const name2 = 'Термальная зона'
+        const name3 = 'Пляжный отдых'
+        const text1 = 'В ресторане и баре «Liechtenstein» используется авторский подход к приготовлению международных блюд. В заведении представлены блюда европейской, японской и итальянской кухонь. В баре имеется большой выбор терпких напитков и коктейлей.'
+        const text2 = 'В спа-центре отеля Долина 960, представлена термальная зона с финской сауной, паровой комнатой и турецким хаммамом, крытым бассейном с шезлонгами для отдыха. Гости могут посетить открытый подогреваемым инфинити-бассейн с панорамным видом на горы, крытый бассейн.'
+        const text3 = 'У тех, кто хочет совместить отдых в горах с купанием в море, есть такая возможность. До городских галечных пляжей Адлера - 40 минут езды на электричке, до пляжей Большого Сочи - 1 час 10 минут.'
+
+
+        setInterval(() => {
+            switch (count) {
+                case 1:
+                    changeCard(img1, btn1, name1, text1)
+                    count++
+                    break;
+                case 2:
+                    changeCard(img2, btn2, name2, text2)
+                    count++
+                    break;
+                case 3:
+                    changeCard(img3, btn3, name3, text3)
+                    count = 1;
+                    break;
+                default:
+                    console.log( "хуйня" );
+            }
+        }, 5000)
+
+    </script>
+</body>
+</html>
