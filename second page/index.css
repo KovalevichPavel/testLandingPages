@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-image: url('./images/main.png');
+    background: url('./images/main.png') 50% no-repeat;
     background-size: 100% 100%;
     background-attachment: fixed;   
     color: white;
@@ -60,6 +60,10 @@ li {
     font-weight: 400;
     font-size: 14px;
     line-height: 19.6px;
+}
+
+.social__list {
+    display: none;
 }
 
 .right-wrapper {
@@ -220,7 +224,7 @@ li {
         display: flex;
         flex-direction: column;
         margin: auto;        
-        top: -350px; 
+        top: -480px; 
         transition: all .5s;
     }
     .menu__link:hover{
@@ -258,5 +262,63 @@ li {
 
     .card {
         width: 200px;
+    }
+}
+
+@media (max-width: 764px){
+    body {
+        background-size: cover;
+    }
+    .logo__img1 {
+        display: none;
+    }    
+    .header__content {
+        padding: 0;
+        margin-bottom: 60px;
+    }
+    .social__hidden {
+        display: none;
+    }
+    .social__list {
+        padding: 0;   
+        display: block; 
+    }
+    .header__content {
+        background-color: #51426a;
+        padding-left: 8px;
+        padding-right: 8px;
+        margin-bottom: 0px;
+    }
+    .header {
+        .container {
+            padding: 0;
+        }
+    }
+
+    .hotel__container {
+        flex-direction: column;
+        margin-bottom: 30px;
+    }
+    .hotel_name {
+        text-align: center;    
+        margin-bottom: 10px;    
+    }
+    .description__container {
+        text-align: justify;
+        margin-bottom: 10px;
+    }
+    .reserve-btn {
+        /* width: 70%; */
+        text-align: center;
+        align-self: auto;
+    }    
+    .hotel__content {
+        display: flex;
+        flex-direction: column;
+        flex-basis: auto;  
+    }
+
+    .card {
+        align-self: center;
     }
 }

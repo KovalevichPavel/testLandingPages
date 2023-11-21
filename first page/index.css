@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-image: url('./images/main.png');
+    background: url('./images/main.png') 50% no-repeat;
     background-size: 100% 100%;
     background-attachment: fixed;   
     color: white;
@@ -60,6 +60,10 @@ li {
     font-weight: 400;
     font-size: 14px;
     line-height: 19.6px;
+}
+
+.social__list {
+    display: none;
 }
 
 .right-wrapper {
@@ -136,7 +140,7 @@ li {
 .bestDeals__container {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: wrap;    
 }
 
 .bestDeals-card {
@@ -232,7 +236,7 @@ li {
         display: flex;
         flex-direction: column;
         margin: auto;        
-        top: -350px; 
+        top: -480px; 
         transition: all .5s;
     }
     .menu__link:hover{
@@ -261,4 +265,60 @@ li {
     .menu__list{
         z-index: 5;
     }    
+}
+
+@media (max-width: 764px){
+    body {
+        background-size: cover;
+    }
+    .logo__img1 {
+        display: none;
+    }    
+    .header__content {
+        padding: 0;
+        margin-bottom: 60px;
+    }
+    .social__hidden {
+        display: none;
+    }
+    .social__list {
+        padding: 0;   
+        display: block; 
+    }
+    .header__content {
+        background-color: #51426a;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+    .header {
+        .container {
+            padding: 0;
+        }
+    }
+
+    .hotel__container {
+        align-items: center;
+        gap: 10px;
+    }
+    .hotel__container-name {
+        text-align: center;
+    }
+    .hotel__container-btn {
+        width: 100%;
+        text-align: center;
+        align-self: auto;
+    }
+
+    .bestDeals__container {
+        flex-direction: block;
+        flex-wrap: nowrap;  
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+    }
+
+    .bestDeals-card {
+        display: block;
+        flex: 0 0 auto;
+        scroll-snap-align: start;
+    }
 }

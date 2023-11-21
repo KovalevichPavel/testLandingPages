@@ -12,8 +12,8 @@
         <div class="container">
             <div class="header__content">
                 <div href="#" class="logos-wraper">
-                    <img src="images/image1.png" class="logo__img">
-                    <img src="images/image2.png" class="logo__img">
+                    <img src="images/image1.png" class="logo__img logo__img1">
+                    <img src="images/image2.png" class="logo__img logo__img2">
                 </div>
                 <nav class="main-menu">
                     <button onclick="toggleMenuList()" class="menu__btn">
@@ -27,13 +27,19 @@
                         <li class="menu__item"><a href="" class="menu__link">Развлечения</a></li>
                         <li class="menu__item"><a href="" class="menu__link">Трансфер</a></li>
                         <li class="menu__item"><a href="" class="menu__link">Контакты</a></li>
+                        <li class="menu__item"><a href="https://vk.com/feed" class="image-container menu__link social__list">
+                            <img src="images/vk.png" alt="vk">
+                        </a></li>
+                        <li class="menu__item"><a href="https://t.me/testForJob123" class="image-container menu__link social__list">
+                            <img src="images/telegram.png" alt="telegram">
+                        </a></li>
                     </ul>
                 </nav>
                 <div class="right-wrapper">
-                    <a href="https://vk.com/feed" class="image-container">
+                    <a href="https://vk.com/feed" class="image-container social__hidden">
                         <img src="images/vk.png" alt="vk">
                     </a>
-                    <a href="https://t.me/testForJob123" class="image-container">
+                    <a href="https://t.me/testForJob123" class="image-container social__hidden">
                         <img src="images/telegram.png" alt="telegram">
                     </a>         
                     <a href="#" class="rught-wrapper-btn">Групповые заезды</a>           
@@ -61,31 +67,37 @@
         <section class="bestDeals">
             <div class="container">
                 <h2 class="bestDeals-name">Лучшие предложения</h2>
-                <div class="bestDeals__container">                    
-                    <div class="bestDeals-card">
-                        <img class="bestDeals-card-img" src="images/appartment-card__image1.png" alt="appartment">
-                        <div class="bestDeals-card__content">
-                            <p class="bestDeals-card__content-name">Премиум Кинг</p>
-                            <h4 class="bestDeals-card__content-price">₽ 4 000</h4>
-                            <a href="#" class="bestDeals-card__content-btn">Подробнее</a>
-                        </div>
+                <div class="bestDeals__container">   
+                    <div class="slide">
+                        <div class="bestDeals-card">
+                            <img class="bestDeals-card-img" src="images/appartment-card__image1.png" alt="appartment">
+                            <div class="bestDeals-card__content">
+                                <p class="bestDeals-card__content-name">Премиум Кинг</p>
+                                <h4 class="bestDeals-card__content-price">₽ 4 000</h4>
+                                <a href="#" class="bestDeals-card__content-btn">Подробнее</a>
+                            </div>
+                        </div>  
+                    </div>                 
+                    <div class="slide">
+                        <div class="bestDeals-card">
+                            <img class="bestDeals-card-img" src="images/appartment-card__image1.png" alt="appartment">
+                            <div class="bestDeals-card__content">
+                                <p class="bestDeals-card__content-name">Эксклюзивный Кинг</p>
+                                <h4 class="bestDeals-card__content-price">₽ 5 000</h4>
+                                <a href="#" class="bestDeals-card__content-btn">Подробнее</a>
+                            </div>
+                        </div> 
                     </div>    
-                    <div class="bestDeals-card">
-                        <img class="bestDeals-card-img" src="images/appartment-card__image1.png" alt="appartment">
-                        <div class="bestDeals-card__content">
-                            <p class="bestDeals-card__content-name">Эксклюзивный Кинг</p>
-                            <h4 class="bestDeals-card__content-price">₽ 5 000</h4>
-                            <a href="#" class="bestDeals-card__content-btn">Подробнее</a>
-                        </div>
-                    </div>   
-                    <div class="bestDeals-card">
-                        <img class="bestDeals-card-img" src="images/appartment-card__image1.png" alt="appartment">
-                        <div class="bestDeals-card__content">
-                            <p class="bestDeals-card__content-name">Star Кинг</p>
-                            <h4 class="bestDeals-card__content-price">₽ 8 000</h4>
-                            <a href="#" class="bestDeals-card__content-btn">Подробнее</a>
-                        </div>
-                    </div>                
+                    <div class="slide">
+                        <div class="bestDeals-card">
+                            <img class="bestDeals-card-img" src="images/appartment-card__image1.png" alt="appartment">
+                            <div class="bestDeals-card__content">
+                                <p class="bestDeals-card__content-name">Star Кинг</p>
+                                <h4 class="bestDeals-card__content-price">₽ 8 000</h4>
+                                <a href="#" class="bestDeals-card__content-btn">Подробнее</a>
+                            </div>
+                        </div>   
+                    </div>                                                                         
                 </div>
             </div>
         </section>
@@ -95,6 +107,34 @@
         function toggleMenuList() {
             document.querySelector('.menu__list').classList.toggle('menu__list--active')
         }        
+
+        const slider = document.querySelector('.bestDeals__container');
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+        console.log(slider);
+
+        slider.addEventListener('mousedown', (e) => {
+            isDown = true;
+            startX = e.pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+        });
+
+        slider.addEventListener('mouseleave', () => {
+            isDown = false;
+        });
+
+        slider.addEventListener('mouseup', () => {
+            isDown = false;
+        });
+
+        slider.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - slider.offsetLeft;
+            const walk = (x - startX) * 3; // Adjust the sliding speed by changing the multiplier
+            slider.scrollLeft = scrollLeft - walk;
+        });
     </script>
 </body>
 </html>
